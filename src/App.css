@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #f2709c,#ff9472);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
 }
-
-.App-link {
-  color: #61dafb;
+button {
+  font-size: 1.2rem;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  outline: none;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover {
+  background: #444;
+  color: #eee;
+  border-color: #444;
+}
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 5rem);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 5rem);
+}
+.span-2 {
+  grid-column: span 2;
+}
+.output {
+  grid-column: 1 / -1;
+  background: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 15px 15px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.previous-operand {
+  color: rgba(255,255,255, .75);
+  font-size: .9rem;
+}
+.current-operand {
+  color: #fff;
+  font-size: 2.5rem;
 }
